@@ -1,0 +1,49 @@
+nav.nav-bar {
+  background-color: black;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+li {
+  display: inline;
+  float: left;
+  width: 50px;
+}
+
+p.main-name {
+  margin: 14px 16px;
+  display: inline;
+  color: white;
+  float: left;
+}
+
+img.icon {
+  color: white;
+  height: 20px;
+  width: auto;
+}
+
+img.fab {
+  max-height: 20px;
+  width: auto;
+}
+
+li a {
+  text-decoration: none;
+  padding: 14px 16px;
+  text-align: center;
+  display: block;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+div.left {
+  float: left;
+}
+
+div.right {
+  float: right;
+}

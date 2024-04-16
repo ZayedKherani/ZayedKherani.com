@@ -1,0 +1,33 @@
+.user-card .header {
+  background-image: url("https://zayedkherani.com/images/cat.png");
+}
+
+.user-card .User {
+  background-position: top left;
+}
+
+.user-card .Organization {
+  background-position: top right;
+}
+
+.user-card .avatar {
+  margin-top: -40px;
+  border: 3px solid #fff;
+  position: relative;
+}
+
+.user-card img {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.user-card h1 {
+  letter-spacing: -0.06em;
+  margin: 16px 0 20px;
+  line-height: 1;
+}
+
+.user-card .status li {
+  width: 33%;
+}

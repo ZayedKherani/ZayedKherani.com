@@ -1,0 +1,16 @@
+html,
+body {
+  font-family: Verdana, sans-serif;
+  padding: 0px 0px 10px 0px;
+  background-color: #111;
+  line-height: 1.5;
+  margin: 0;
+}
+
+#centerThis {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin: auto;
+  width: 50%;
+}

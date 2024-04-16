@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+
+    <meta
+      name="keywords"
+      content="Zayed, Kherani, ZER0, Moomatic, Darkflow, Zayed Kherani"
+    />
+    <meta
+      name="description"
+      content="Zayed Kherani · GitHub Card Embed iFrame · Repo Widget"
+    />
+    <meta name="author" content="Zayed Kherani" />
+
+    <meta
+      property="og:description"
+      content="Zayed Kherani · GitHub Card Embed iFrame · Repo Widget"
+    />
+    <meta
+      property="og:site_name"
+      content="Zayed Kherani · GitHub Card Embed iFrame · Repo Widget"
+    />
+    <meta
+      property="og:title"
+      content="Zayed Kherani · GitHub Card Embed iFrame · Repo Widget"
+    />
+
+    <meta
+      property="og:image"
+      content="https://zayedkherani.com/images/cat.png"
+    />
+    <meta property="og:image:height" content="1250" />
+    <meta property="og:image:width" content="2500" />
+
+    <link
+      href="https://zayedkherani.com/images/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+
+    <title>Zayed Kherani · GitHub Card Embed iFrame · Repo Widget</title>
+
+    <link
+      rel="stylesheet"
+      href="https://zayedkherani.com/css/gitHubWidgetMain.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://zayedkherani.com/css/gitHubRepoWidget.css"
+    />
+
+    <script src="https://zayedkherani.com/js/gitHubEmbediFrame.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <script id="repo-card" type="text/template">
+        <div class="header {language}">
+            <a class="avatar" href="https://github.com/{login}">
+                <img src="{avatar_url}&s=48" alt="{login}">
+            </a>
+            <h1>
+                <a href="https://github.com/{full_name}">{name}</a>
+            </h1>
+        </div>
+        <div class="content">
+            <p>{description}{homepage}</p>
+            <ul class="status">
+                <li>
+                    <a href="https://github.com/{full_name}/network">
+                        <strong>{forks_count}</strong>
+                        Forks
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/{full_name}/stargazers">
+                        <strong>{watchers_count}</strong>
+                        Stars
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </script>
+    </main>
+  </body>
+</html>

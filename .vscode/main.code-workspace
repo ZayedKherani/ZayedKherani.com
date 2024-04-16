@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"prettier.tabWidth": 4,
+		"editor.tabSize": 4,
+	}
+}

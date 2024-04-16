@@ -1,0 +1,65 @@
+section.project {
+  border: 3px solid white;
+  text-align: center;
+  max-width: 500px;
+  padding: 10px;
+  margin: auto;
+  color: white;
+}
+
+section.project:hover,
+a.project-link:hover,
+div.project:hover,
+div.text:hover {
+  background-color: white;
+  color: black;
+}
+
+section.project:hover,
+section.project:hover a.project-link,
+section.project:hover div.project,
+section.project:hover div.text {
+  background-color: white !important;
+  color: black !important;
+}
+
+div.text {
+  display: table;
+}
+
+img.project {
+  max-width: 150px;
+  float: left;
+}
+
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+span.tittle {
+  font-size: x-large;
+  font-weight: 700;
+}
+
+span.written-in {
+  font-weight: 700;
+}
+
+a.project-link:link,
+a.project-link:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a.project-link:active,
+a.project-link:hover,
+a.project-link:focus {
+  text-decoration: none;
+  color: black;
+}
+
+a.project-link:focus {
+  background-color: black;
+}
