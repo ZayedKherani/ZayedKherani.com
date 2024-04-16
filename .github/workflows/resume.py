@@ -42,11 +42,9 @@ print_settings = {
 
 chrome_options.add_experimental_option("prefs", {
     "printing.print_preview_sticky_settings.appState": dumps(print_settings),
-    # Change default directory for downloads
     "savefile.default_directory": getcwd(),
-    # Change default directory for downloads
     "download.default_directory": getcwd(),
-    "download.prompt_for_download": False,  # To auto download the file
+    "download.prompt_for_download": False,
     "download.directory_upgrade": True,
     "profile.default_content_setting_values.automatic_downloads": 1,
     "safebrowsing.enabled": True
@@ -56,7 +54,12 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('https://resume.creddle.io/resume/awnsqrb764w')
 
-sleep(10)
+sleepCounter = 10
+
+while sleepCounter > 0:
+    print(sleepCounter)
+    sleep(1)
+    sleepCounter -= 1
 
 pdf_data = driver.execute_cdp_cmd("Page.printToPDF", print_settings)
 with open('resume.pdf', 'wb') as file:
