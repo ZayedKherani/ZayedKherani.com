@@ -53,6 +53,9 @@ jobs:
       - name: Run resume.py
         run: python .github/workflows/resume.py
 
+      - name: Remove .vscode folder
+        run: rm -rf .vscode
+
       - name: Remove .gitignore file
         run: rm .gitignore
 

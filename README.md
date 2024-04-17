@@ -1,6 +1,6 @@
 # ZayedKherani.com
 
-Zayed Kherani's Portfolio
+[Zayed Kherani's Portfolio](https://zayedkherani.com)
 
 ## [`main`](https://github.com/ZayedKherani/ZayedKherani.com/tree/main)
 [![Main to Production Workflow](https://github.com/ZayedKherani/ZayedKherani.com/actions/workflows/mainToProduction.yml/badge.svg?branch=main)](https://github.com/ZayedKherani/ZayedKherani.com/actions/workflows/mainToProduction.yml)
