@@ -16,9 +16,7 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.GH_TOKEN }}
-      
-      - name: Verify
-        uses: vchain-us/verify-action@master
+          fetch-depth: 0 # this is important for git-auto-commit-action to work
 
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
@@ -42,12 +40,27 @@ jobs:
       - name: Run resume.py
         run: python .github/workflows/resume.py
 
-      - name: Push to production branch
+      - name: Set up git user
         run: |
-          git config --local user.email "action@github.com"
+          git config --local user.email "noreply@zayedkherani.com"
           git config --local user.name "GitHub Action"
-          git checkout -b production
-          git add .
-          COMMIT_MSG=$(git log -1 --pretty=%B)
-          git commit -m "$COMMIT_MSG"
-          git push -f origin production
+
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v4
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: Push to production branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: $(git log -1 --pretty=%B)
+          branch: production
+          commit_options: "--no-verify --signoff"
+          repository: .
+          commit_user_name: GitHub Action
+          commit_user_email: noreply@zayedkherani.com
+          commit_author: GitHub Action <noreply@zayedkherani.com>
