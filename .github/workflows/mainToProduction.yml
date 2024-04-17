@@ -1,22 +1,27 @@
-name: Main to Production Workflow
+name: Merged Workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      workflow_dispatch_trigger:
+        required: true
+        type: boolean
+        default: true
   push:
     branches:
       - main
+      - production
 
 jobs:
-  build:
+  resume:
     runs-on: ubuntu-latest
-
+    if: github.ref == 'refs/heads/main' || ${{ inputs.workflow_dispatch_trigger }}
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
           ref: main
           token: ${{ secrets.GH_TOKEN }}
-          fetch-depth: 0 # this is important for git-auto-commit-action to work
 
       - name: Set up Python 3.9
         uses: actions/setup-python@v5
@@ -63,7 +68,7 @@ jobs:
           git_user_signingkey: true
           git_commit_gpgsign: true
           trust_level: 5
-      
+
       - name: Push to production branch
         run: |
           git checkout -b production
@@ -71,3 +76,17 @@ jobs:
           COMMIT_MSG=$(git log -1 --pretty=%B)
           git commit --signoff -m "$COMMIT_MSG"
           git push -f origin production
+
+  verified_commit_check_main:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Check for unverified commits
+        uses: nadock/verified_commits_check@v1
+
+  verified_commit_check_production:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/production'
+    steps:
+      - name: Check for unverified commits
+        uses: nadock/verified_commits_check@v1
