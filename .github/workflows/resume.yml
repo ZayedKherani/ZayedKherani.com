@@ -40,8 +40,6 @@ jobs:
         run: python .github/workflows/resume.py
 
       - name: Push to production branch
-        with:
-          token: ${{ secrets.GH_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
