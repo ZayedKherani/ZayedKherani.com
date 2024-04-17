@@ -6,7 +6,7 @@ on:
       - production
 
 jobs:
-  verified_commit_check:
+  verified_commit_check_production:
     runs-on: ubuntu-latest
 
     steps:

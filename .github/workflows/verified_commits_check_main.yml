@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  verified_commit_check:
+  verified_commit_check_main:
     runs-on: ubuntu-latest
 
     steps:
