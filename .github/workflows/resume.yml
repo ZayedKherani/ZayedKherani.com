@@ -40,6 +40,15 @@ jobs:
       - name: Run resume.py
         run: python .github/workflows/resume.py
 
+      - name: Remove .github folder
+        run: rm -rf .github
+
+      - name: Remove .gitignore file
+        run: rm .gitignore
+
+      - name: Remove README.md file
+        run: rm README.md
+
       - name: Set up git user
         run: |
           git config --local user.email "noreply@zayedkherani.com"
