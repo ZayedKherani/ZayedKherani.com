@@ -54,12 +54,7 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 driver.get('https://resume.creddle.io/resume/awnsqrb764w')
 
-sleepCounter = 10
-
-while sleepCounter > 0:
-    print(sleepCounter)
-    sleep(1)
-    sleepCounter -= 1
+sleep(10)
 
 pdf_data = driver.execute_cdp_cmd("Page.printToPDF", print_settings)
 with open('resume.pdf', 'wb') as file:

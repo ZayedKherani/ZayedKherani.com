@@ -16,6 +16,9 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.GH_TOKEN }}
+      
+      - name: Verify
+        uses: vchain-us/verify-action@master
 
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
