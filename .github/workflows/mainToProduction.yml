@@ -1,4 +1,4 @@
-name: Merged Workflow
+name: Main to Production Workflow
 
 on:
   workflow_dispatch:
@@ -13,7 +13,15 @@ on:
       - production
 
 jobs:
+  verified_commit_check_main:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Check for unverified commits
+        uses: nadock/verified_commits_check@v1
+
   resume:
+    needs: verified_commit_check_main
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || ${{ inputs.workflow_dispatch_trigger }}
     steps:
@@ -77,14 +85,8 @@ jobs:
           git commit --signoff -m "$COMMIT_MSG"
           git push -f origin production
 
-  verified_commit_check_main:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Check for unverified commits
-        uses: nadock/verified_commits_check@v1
-
   verified_commit_check_production:
+    needs: [verified_commit_check_main, resume]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/production'
     steps:
