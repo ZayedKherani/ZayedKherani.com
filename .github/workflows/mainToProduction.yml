@@ -115,7 +115,7 @@ jobs:
 
       - name: Push to production branch
         run: |
-          git checkout -b production
+          git checkout -B production
           git add .
           COMMIT_MSG=$(git log -1 --pretty=%B)
           git commit --signoff -m "$COMMIT_MSG"
