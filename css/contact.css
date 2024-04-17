@@ -1,0 +1,60 @@
+div.contactForm {
+  position: relative;
+  top: 40px;
+}
+
+main div.contactForm form.contactForm input.name,
+main div.contactForm form.contactForm input.email,
+main div.contactForm form.contactForm input.subject,
+main div.contactForm form.contactForm textarea.message {
+  border: 5px solid #000000;
+  background: #111111;
+  margin: 0 0 17px 0;
+  padding: 15px;
+  color: #ffffff;
+}
+
+main div.contactForm form.contactForm button.submit {
+  border: 5px solid #000000;
+  text-decoration: none;
+  transition: 0.5s ease;
+  background: #111111;
+  padding: 12px 34px;
+  color: #757575;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+main div.contactForm form.contactForm button.submit:hover {
+  border: 5px solid #000000;
+  transition: 0.5s ease;
+  background: #000000;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 601px) {
+  main div.contactForm form.contactForm input.name,
+  main div.contactForm form.contactForm input.email {
+    width: calc(25% + 102px);
+  }
+
+  main div.contactForm form.contactForm input.subject,
+  main div.contactForm form.contactForm textarea.message {
+    width: calc(50% + 250px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main div.contactForm form.contactForm input.name,
+  main div.contactForm form.contactForm input.email,
+  main div.contactForm form.contactForm input.subject,
+  main div.contactForm form.contactForm textarea.message {
+    border: 5px solid #000000;
+    width: calc(50% + 59px);
+  }
+
+  main div.contactForm form.contactForm button.submit {
+    width: calc(50% + 100px);
+  }
+}

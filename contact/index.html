@@ -9,12 +9,12 @@
       name="keywords"
       content="Zayed, Kherani, ZER0, Moomatic, Darkflow, Zayed Kherani"
     />
-    <meta name="description" content="Zayed Kherani · Resume" />
+    <meta name="description" content="Zayed Kherani · Contact" />
     <meta name="author" content="Zayed Kherani" />
 
-    <meta property="og:description" content="Zayed Kherani · Resume" />
-    <meta property="og:site_name" content="Zayed Kherani · Resume" />
-    <meta property="og:title" content="Zayed Kherani · Resume" />
+    <meta property="og:description" content="Zayed Kherani · Contact" />
+    <meta property="og:site_name" content="Zayed Kherani · Contact" />
+    <meta property="og:title" content="Zayed Kherani · Contact" />
 
     <meta
       property="og:image"
@@ -29,10 +29,13 @@
       type="image/x-icon"
     />
 
-    <title>Zayed Kherani · Resume</title>
+    <title>Zayed Kherani · Contact</title>
 
     <link rel="stylesheet" href="https://zayedkherani.com/css/navbar.css" />
+    <link rel="stylesheet" href="https://zayedkherani.com/css/contact.css" />
     <link rel="stylesheet" href="https://zayedkherani.com/css/main.css" />
+
+    <script src="https://zayedkherani.com/js/mainchannels-cloudflare-worker.js"></script>
   </head>
 
   <body>
@@ -111,22 +114,44 @@
     </header>
 
     <main>
-      <div
-        style="
-          position: absolute;
-          top: 54px;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: #111111;
-        "
-      >
-        <iframe
-          src="https://zayedkherani.com/resume.pdf"
-          frameborder="0"
-          allowtransparency="true"
-          style="display: block; width: 100%; height: 100%; border: none"
-        ></iframe>
+      <div id="centerThis" class="contactForm">
+        <form id="contact-form" class="contactForm">
+          <div>
+            <input
+              class="name"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Enter Your Name"
+              required
+            />
+            <input
+              class="email"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter email address"
+              required
+            />
+          </div>
+          <input
+            class="subject"
+            id="subject"
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
+          <textarea
+            class="message"
+            id="message"
+            rows="8"
+            name="message"
+            placeholder="Message (Required)"
+            required
+          ></textarea>
+          <button class="submit" type="submit">Send Message</button>
+        </form>
       </div>
     </main>
   </body>
