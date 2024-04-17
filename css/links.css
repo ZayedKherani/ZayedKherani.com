@@ -9,31 +9,18 @@ a.link {
   transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
 }
 
-a.link:link {
-  text-decoration: none;
-  color: white;
-}
-
+a.link:link,
 a.link:visited {
   text-decoration: none;
   color: white;
 }
 
-a.link:hover {
+a.link:hover,
+a.link:focus,
+a.link:active {
   background-color: black;
   text-decoration: none;
   color: white;
   transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
   border: 5px solid white;
-}
-
-a.link:focus {
-  background-color: white;
-  text-decoration: none;
-  color: black;
-}
-
-a.link:active {
-  text-decoration: none;
-  color: black;
 }
