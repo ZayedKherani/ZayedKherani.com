@@ -53,14 +53,12 @@ jobs:
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
           git_user_signingkey: true
           git_commit_gpgsign: true
-
+          trust_level: 5
+      
       - name: Push to production branch
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: $(git log -1 --pretty=%B)
-          branch: production
-          commit_options: "--no-verify --signoff"
-          repository: .
-          commit_user_name: GitHub Action
-          commit_user_email: noreply@zayedkherani.com
-          commit_author: GitHub Action <noreply@zayedkherani.com>
+        run: |
+          git checkout -b production
+          git add .
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          git commit --signoff -m "$COMMIT_MSG"
+          git push -f origin production
