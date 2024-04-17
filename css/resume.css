@@ -1,11 +1,11 @@
 @media screen and (min-width: 601px) {
-  iframe.githubIFrame {
-    width: 400px;
+  div.linkedInIFrame {
+    top: 54px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  iframe.githubIFrame {
-    width: 200px;
+  div.linkedInIFrame {
+    top: 108px;
   }
 }
