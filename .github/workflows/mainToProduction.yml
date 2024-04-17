@@ -81,7 +81,7 @@ jobs:
         run: |
           git checkout -b production
           git add .
-          COMMIT_MSG=$(git log -1 --pretty=%B)
+          COMMIT_MSG="main: $(git log -1 --pretty=%B)"
           git commit --signoff -m "$COMMIT_MSG"
           git push -f origin production
 
@@ -120,7 +120,7 @@ jobs:
         run: |
           git checkout -B production
           git add .
-          COMMIT_MSG=$(git log -1 --pretty=%B)
+          COMMIT_MSG="production: $(git log -1 --pretty=%B)"
           git commit --signoff -m "$COMMIT_MSG"
           git push -f origin production
       
