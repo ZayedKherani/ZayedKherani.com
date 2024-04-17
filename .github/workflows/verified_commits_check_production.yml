@@ -1,9 +1,8 @@
-name: Run verified commits check
+name: Verified Commits Workflow (production)
 
 on:
   push:
     branches:
-      - main
       - production
 
 jobs:

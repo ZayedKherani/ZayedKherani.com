@@ -1,0 +1,14 @@
+name: Verified Commits Workflow (main)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verified_commit_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for unverified commits
+        uses: nadock/verified_commits_check@v1
