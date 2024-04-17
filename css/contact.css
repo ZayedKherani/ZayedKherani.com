@@ -12,12 +12,37 @@ main div.contactForm form.contactForm textarea.message {
   margin: 0 0 17px 0;
   padding: 15px;
   color: #ffffff;
+  transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
+}
+
+main div.contactForm form.contactForm input.name::-ms-input-placeholder,
+main div.contactForm form.contactForm input.name::placeholder,
+main div.contactForm form.contactForm input.email::-ms-input-placeholder,
+main div.contactForm form.contactForm input.email::placeholder,
+main div.contactForm form.contactForm input.subject::-ms-input-placeholder,
+main div.contactForm form.contactForm input.subject::placeholder,
+main div.contactForm form.contactForm textarea.message::-ms-input-placeholder,
+main div.contactForm form.contactForm textarea.message::placeholder {
+  color: #757575;
+  opacity: 1;
+}
+
+main div.contactForm form.contactForm input.name:active,
+main div.contactForm form.contactForm input.name:focus,
+main div.contactForm form.contactForm input.email:active,
+main div.contactForm form.contactForm input.email:focus,
+main div.contactForm form.contactForm input.subject:active,
+main div.contactForm form.contactForm input.subject:focus,
+main div.contactForm form.contactForm textarea.message:active,
+main div.contactForm form.contactForm textarea.message:focus {
+  border: 5px solid #ffffff;
+  transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
 }
 
 main div.contactForm form.contactForm button.submit {
   border: 5px solid #000000;
   text-decoration: none;
-  transition: 0.5s ease;
+  transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
   background: #111111;
   padding: 12px 34px;
   color: #757575;
@@ -26,9 +51,10 @@ main div.contactForm form.contactForm button.submit {
   margin: auto;
 }
 
+main div.contactForm form.contactForm button.submit:active,
 main div.contactForm form.contactForm button.submit:hover {
-  border: 5px solid #000000;
-  transition: 0.5s ease;
+  border: 5px solid #ffffff;
+  transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
   background: #000000;
   color: #ffffff;
 }

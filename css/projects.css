@@ -1,26 +1,18 @@
 section.project {
-  border: 3px solid white;
+  border: 5px solid black;
   text-align: center;
   max-width: 500px;
   padding: 10px;
   margin: auto;
   color: white;
+  transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
 }
 
-section.project:hover,
-a.project-link:hover,
-div.project:hover,
-div.text:hover {
-  background-color: white;
-  color: black;
-}
-
-section.project:hover,
-section.project:hover a.project-link,
-section.project:hover div.project,
-section.project:hover div.text {
-  background-color: white !important;
-  color: black !important;
+section.project:hover {
+  background-color: black !important;
+  color: white !important;
+  transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
+  border: 5px solid white !important;
 }
 
 div.text {
