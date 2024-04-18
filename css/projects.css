@@ -1,20 +1,20 @@
 section.project {
-border: 5px solid black;
+border: 5px solid #000000;
 text-align: center;
 max-width: 500px;
 padding: 10px;
 margin: auto;
-color: white;
+color: #ffffff;
 transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
 }
 
 section.project:hover,
 section.project:focus,
 section.project:active {
-  background-color: black !important;
-  color: white !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
   transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
-  border: 5px solid white !important;
+  border: 5px solid #ffffff !important;
   text-decoration: none;
 }
 

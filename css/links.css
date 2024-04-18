@@ -1,5 +1,5 @@
 a.link {
-  border: 5px solid black;
+  border: 5px solid #000000;
   text-align: center;
   max-width: 636px;
   display: block;
@@ -12,15 +12,15 @@ a.link {
 a.link:link,
 a.link:visited {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 
 a.link:hover,
 a.link:focus,
 a.link:active {
-  background-color: black;
+  background-color: #000000;
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
-  border: 5px solid white;
+  border: 5px solid #ffffff;
 }

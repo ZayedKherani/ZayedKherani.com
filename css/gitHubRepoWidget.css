@@ -2,7 +2,7 @@
   position: absolute;
   top: 5px;
   left: 5px;
-  border: 2px solid #fff;
+  border: 2px solid #ffffff;
 }
 
 .repo-card .avatar img {
@@ -15,14 +15,14 @@
   margin: 0;
   padding: 0;
   line-height: 148px;
-  color: #fff;
+  color: #ffffff;
   font-size: 36px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 .repo-card h1 a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .repo-card .C {
-  background: #555;
+  background: #555555;
 }
 
 .repo-card .CSS {

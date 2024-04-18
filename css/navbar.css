@@ -1,7 +1,12 @@
 nav.nav-bar {
-  background-color: black;
+  background-color: #000000;
   list-style-type: none;
   overflow: hidden;
+}
+
+nav.nav-bar li {
+  margin: 0;
+  padding: 0;
 }
 
 li {
@@ -13,12 +18,12 @@ li {
 p.main-name {
   margin: 14px 16px;
   display: inline;
-  color: white;
+  color: #ffffff;
   float: left;
 }
 
 img.icon {
-  color: white;
+  color: #ffffff;
   height: 20px;
   width: auto;
 }
@@ -33,11 +38,11 @@ li a {
   padding: 14px 16px;
   text-align: center;
   display: block;
-  color: white;
+  color: #ffffff;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: #111111;
 }
 
 div.left {
