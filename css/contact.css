@@ -28,12 +28,16 @@ main div.contactForm form.contactForm textarea.message::placeholder {
 }
 
 main div.contactForm form.contactForm input.name:active,
+main div.contactForm form.contactForm input.name:hover,
 main div.contactForm form.contactForm input.name:focus,
 main div.contactForm form.contactForm input.email:active,
+main div.contactForm form.contactForm input.email:hover,
 main div.contactForm form.contactForm input.email:focus,
 main div.contactForm form.contactForm input.subject:active,
+main div.contactForm form.contactForm input.subject:hover,
 main div.contactForm form.contactForm input.subject:focus,
 main div.contactForm form.contactForm textarea.message:active,
+main div.contactForm form.contactForm textarea.message:hover,
 main div.contactForm form.contactForm textarea.message:focus {
   border: 5px solid #ffffff;
   transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
@@ -52,7 +56,8 @@ main div.contactForm form.contactForm button.submit {
 }
 
 main div.contactForm form.contactForm button.submit:active,
-main div.contactForm form.contactForm button.submit:hover {
+main div.contactForm form.contactForm button.submit:hover,
+main div.contactForm form.contactForm button.submit:focus {
   border: 5px solid #ffffff;
   transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
   background: #000000;

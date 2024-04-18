@@ -2,8 +2,8 @@ html,
 body {
   font-family: Verdana, sans-serif;
   padding: 0px 0px 10px 0px;
-  background-color: #111111;
-  background: #111111;
+  background-color: #111111 !important;
+  background: #111111 !important;
   line-height: 1.5;
   margin: 0;
 }
