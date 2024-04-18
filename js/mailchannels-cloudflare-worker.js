@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Send the data to the MailChannels worker
-    fetch("https://mailchannel.zayedkherani.workers.dev/", {
+    fetch("https://zayedkherani.com/api/mailchannel/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
