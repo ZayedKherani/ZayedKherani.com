@@ -4,12 +4,14 @@ nav.nav-bar {
   overflow: hidden;
 }
 
-nav.nav-bar li {
+nav.nav-bar ul {
   margin: 0;
   padding: 0;
 }
 
-li {
+nav.nav-bar ul li {
+  margin: 0;
+  padding: 0;
   display: inline;
   float: left;
   width: 50px;
@@ -33,7 +35,7 @@ img.fab {
   width: auto;
 }
 
-li a {
+nav.nav-bar ul li a {
   text-decoration: none;
   padding: 14px 16px;
   text-align: center;
@@ -41,7 +43,7 @@ li a {
   color: #ffffff;
 }
 
-li a:hover:not(.active) {
+nav.nav-bar ul li a:hover:not(.active) {
   background-color: #111111;
 }
 
