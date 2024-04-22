@@ -41,9 +41,6 @@ jobs:
 
       - name: Remove FireFox
         run: sudo apt purge firefox
-      
-      - name: Upgrade apt packages
-        run: sudo apt upgrade -y
 
       - name: Remove Chrome
         run: sudo apt purge google-chrome-stable
@@ -51,15 +48,25 @@ jobs:
       - name: Remove default Chromium
         run: sudo apt purge chromium-browser
 
+      - name: Cache Chromium
+        id: cache-chromium
+        uses: actions/cache@v4
+        with:
+          path: /usr/bin/chromium-browser
+          key: chromium-${{ hashFiles('**/lockfile.json') }}
+
       - name: Install a new Chromium
-        run: sudo apt install -y chromium-browser
-      
+        run: |
+          if [ -z "$(ls -A /usr/bin/chromium-browser)" ]; then
+            sudo apt install -y chromium-browser=1:85.0.4183.83-0ubuntu2.22.04.1
+          fi
+
       - name: Remove unneeded packages
         run: sudo apt autoremove
-      
+
       - name: Clean apt deprecated packages
         run: sudo apt autoclean
-      
+
       - name: Clean apt packages
         run: sudo apt clean
 
@@ -109,7 +116,7 @@ jobs:
     steps:
       - name: Check for unverified commits
         uses: nadock/verified_commits_check@v1
-      
+
       - name: Checkout production branch
         uses: actions/checkout@v4
         with:
@@ -118,7 +125,7 @@ jobs:
 
       - name: Remove .github folder
         run: rm -rf .github
-      
+
       - name: Set up git user
         run: |
           git config --local user.email "noreply@zayedkherani.com"
@@ -141,6 +148,6 @@ jobs:
           COMMIT_MSG="production: $(git log -1 --pretty=%B)"
           git commit --signoff -m "$COMMIT_MSG"
           git push -f origin production
-      
+
       - name: Check for unverified commits
         uses: nadock/verified_commits_check@v1
