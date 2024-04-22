@@ -1,6 +1,7 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.os_manager import ChromeType
+from webdriver_manager.core.os_manager import ChromeType, PATTERN
+from webdriver_manager.core.utils import read_version_from_cmd
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from os import getcwd, remove
@@ -12,8 +13,20 @@ from time import sleep
 if exists(join(getcwd(), 'resume.pdf')):
     remove(join(getcwd(), 'resume.pdf'))
 
-chrome_service = Service(ChromeDriverManager(
-    chrome_type=ChromeType.CHROMIUM).install())
+if exists("/usr/bin/chromium"):
+    chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM, driver_version=read_version_from_cmd(
+        "/usr/bin/chromium --version", PATTERN[ChromeType.CHROMIUM])).install())
+    print(f"/usr/bin/chromium: {read_version_from_cmd(
+        '/usr/bin/chromium --version', PATTERN[ChromeType.CHROMIUM])}")
+elif exists("/usr/bin/chromium-browser"):
+    chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM, driver_version=read_version_from_cmd(
+        "/usr/bin/chromium-browser --version", PATTERN[ChromeType.CHROMIUM])).install())
+    print(f"/usr/bin/chromium-browser: {read_version_from_cmd(
+        '/usr/bin/chromium-browser --version', PATTERN[ChromeType.CHROMIUM])}")
+else:
+    chrome_service = Service(ChromeDriverManager(
+        chrome_type=ChromeType.CHROMIUM).install())
+    print(f"detected: {chrome_service.path.split('/')[7]}")
 
 chrome_options = Options()
 options = [

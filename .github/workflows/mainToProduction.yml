@@ -38,6 +38,9 @@ jobs:
 
       - name: Update apt registry
         run: sudo apt update
+
+      - name: Remove FireFox
+        run: sudo apt firefox
       
       - name: Upgrade apt packages
         run: sudo apt upgrade -y
@@ -49,7 +52,7 @@ jobs:
         run: sudo apt purge chromium-browser
 
       - name: Install a new Chromium
-        run: sudo apt install -y chromium-browser
+        run: sudo apt install -y chromium-browser=1:85.0.4183.83-0ubuntu2.22.04.1
       
       - name: Remove unneeded packages
         run: sudo apt autoremove
