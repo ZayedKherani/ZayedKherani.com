@@ -41,7 +41,96 @@
       type="image/x-icon"
     />
 
-    <title>Zayed Kherani · GitHub Card Embed iFrame · User Widget</title>
+    <title>Zayed Kherani · GitHub Card Embeded iFrame · User Widget</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Zayed Kherani",
+            "item": "https://zayedkherani.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Zayed Kherani · GitHub",
+            "item": "https://zayedkherani.com/github/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Zayed Kherani · GitHub Card Embeded iFrame · User Widget",
+            "item": "https://zayedkherani.com/github/cards/user.html"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zayed Kherani",
+        "jobTitle": "Student, Chief Technical Officer at Tech Under 20",
+        "email": "Zayedkherani@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Peterborough, Ontario",
+          "addressCountry": "Canada"
+        },
+        "url": "https://zayedkherani.com",
+        "sameAs": [
+          "https://zayedkherani.com/",
+          "https://www.facebook.com/Zayed.Kherani/",
+          "https://www.linkedin.com/in/zayedkherani",
+          "https://github.com/ZayedKherani",
+          "https://www.instagram.com/zayed.kherani/",
+          "https://twitter.com/ZayedKherani/",
+          "https://www.reddit.com/user/Zayed4502/",
+          "https://www.pinterest.ca/zayedkherani/",
+          "https://open.spotify.com/user/zayed4502/"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Trent University",
+          "sameAs": "https://www.trentu.ca/",
+          "url": "https://www.trentu.ca/"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://zayedkherani.com",
+        "name": "Zayed Kherani",
+        "author": {
+          "@type": "Person",
+          "name": "Zayed Kherani"
+        },
+        "description": "Zayed Kherani's Website",
+        "keywords": "Zayed, Kherani, ZER0, Moomatic, Darkflow, Zayed Kherani",
+        "inLanguage": "en-US",
+        "isFamilyFriendly": true,
+        "dateCreated": "2021-08-08",
+        "dateModified": "2024-04-22",
+        "image": "https://zayedkherani.com/images/cat.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/zayedkherani",
+          "https://github.com/ZayedKherani",
+          "https://www.instagram.com/zayed.kherani/",
+          "https://twitter.com/ZayedKherani/",
+          "https://www.reddit.com/user/Zayed4502/",
+          "https://www.pinterest.ca/zayedkherani/",
+          "https://open.spotify.com/user/zayed4502/"
+        ]
+      }
+    </script>
 
     <link
       rel="stylesheet"
@@ -59,7 +148,7 @@
     <main>
       <script id="user-card" type="text/template">
         <div class="header {type}"></div>
-        <a class="avatar" href="https://github.com/{login}">
+        <a class="avatar" href="https://github.com/{login}/">
             <img src="{avatar_url}&s=80" alt="{name}">
         </a>
         <div class="content">
@@ -72,13 +161,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://gist.github.com/{login}">
+                    <a href="https://gist.github.com/{login}/">
                         <strong>{public_gists}</strong>
                         Gists
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/{login}/followers">
+                    <a href="https://github.com/{login}/followers/">
                         <strong>{followers}</strong>
                         Followers
                     </a>
