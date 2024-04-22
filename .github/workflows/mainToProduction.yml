@@ -36,6 +36,12 @@ jobs:
         with:
           python-version: 3.9
 
+      - name: Update apt registry
+        run: sudo apt update
+      
+      - name: Upgrade apt packages
+        run: sudo apt upgrade -y
+
       - name: Remove Chrome
         run: sudo apt purge google-chrome-stable
 
@@ -44,6 +50,15 @@ jobs:
 
       - name: Install a new Chromium
         run: sudo apt install -y chromium-browser
+      
+      - name: Remove unneeded packages
+        run: sudo apt autoremove
+      
+      - name: Clean apt deprecated packages
+        run: sudo apt autoclean
+      
+      - name: Clean apt packages
+        run: sudo apt clean
 
       - name: Install dependencies
         run: |
