@@ -1,11 +1,24 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		}
-	],
-	"settings": {
-		"prettier.tabWidth": 4,
-		"editor.tabSize": 4,
-	}
+  "folders": [
+    {
+      "path": ".."
+    }
+  ],
+  "settings": {
+    "prettier.tabWidth": 4,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Open index.html",
+        "file": "c:\\Users\\zayed\\Desktop\\ZayedKherani.com\\index.html"
+      }
+    ],
+    "compounds": []
+  }
 }

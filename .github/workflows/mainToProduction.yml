@@ -76,6 +76,9 @@ jobs:
 
       - name: Remove README.md file
         run: rm README.md
+      
+      - name: remove sitemap reference file
+        run: rm sitemap.old.xml
 
       - name: Set up git user
         run: |
