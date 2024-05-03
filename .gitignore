@@ -1,4 +1,9 @@
+# dkim record dns entry
 dkim_record.txt
+
+# private keys for signing
 private_key.pem
 private_key.txt
+
+# resume used in reference
 resume.pdf
