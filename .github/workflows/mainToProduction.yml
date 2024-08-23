@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Check for unverified commits
+      - name: Check for Unverified Commits
         uses: nadock/verified_commits_check@v1
 
-  resume:
+  cleanup:
     needs: verified_commit_check_main
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || ${{ inputs.workflow_dispatch_trigger }}
     steps:
-      - name: Checkout main branch
+      - name: Checkout Main Branch
         uses: actions/checkout@v4
         with:
           ref: main
@@ -36,31 +36,31 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Update apt registry
+      - name: Update APT Registry
         run: sudo apt update
 
-      - name: Remove FireFox
-        run: sudo apt purge firefox
+      - name: Remove Mozilla FireFox, Google Chrome, and Google Chromium
+        run: sudo apt purge firefox google-chrome-stable chromium-browser
 
-      - name: Remove Chrome
-        run: sudo apt purge google-chrome-stable
+      # - name: Remove Google Chrome
+      #   run: sudo apt purge google-chrome-stable
 
-      - name: Remove default Chromium
-        run: sudo apt purge chromium-browser
+      # - name: Remove Google Default Chromium
+      #   run: sudo apt purge chromium-browser
 
-      - name: Install a new Chromium
+      - name: Install a Specified Chromium
         run: sudo apt install -y chromium-browser=1:85.0.4183.83-0ubuntu2.22.04.1
-      
-      - name: Remove unneeded packages
+
+      - name: Remove Unneeded Packages
         run: sudo apt autoremove
-      
-      - name: Clean apt deprecated packages
+
+      - name: Clean Deprecated Packages
         run: sudo apt autoclean
-      
-      - name: Clean apt packages
+
+      - name: Clean APT Packages
         run: sudo apt clean
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 pandas webdriver-manager selenium
@@ -68,24 +68,24 @@ jobs:
       - name: Run resume.py
         run: python .github/workflows/resume.py
 
-      - name: Remove .vscode folder
+      - name: Remove .vscode Folder
         run: rm -rf .vscode
 
-      - name: Remove .gitignore file
+      - name: Remove .gitignore File
         run: rm .gitignore
 
-      - name: Remove README.md file
+      - name: Remove README.md File
         run: rm README.md
-      
-      - name: remove sitemap reference file
+
+      - name: Remove SiteMap Reference file
         run: rm sitemap.old.xml
 
-      - name: Set up git user
+      - name: Set Up Git User
         run: |
           git config --local user.email "noreply@zayedkherani.com"
           git config --local user.name "GitHub Action"
 
-      - name: Import GPG key
+      - name: Import GPG Signing Key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v6
         with:
@@ -95,7 +95,7 @@ jobs:
           git_commit_gpgsign: true
           trust_level: 5
 
-      - name: Push to production branch
+      - name: Push To Production Branch
         run: |
           git checkout -b production
           git add .
@@ -107,24 +107,24 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/production'
     steps:
-      - name: Check for unverified commits
+      - name: Check for Unverified Commits
         uses: nadock/verified_commits_check@v1
-      
-      - name: Checkout production branch
+
+      - name: Checkout Production Branch
         uses: actions/checkout@v4
         with:
           ref: production
           token: ${{ secrets.GH_TOKEN }}
 
-      - name: Remove .github folder
+      - name: Remove .github Folder
         run: rm -rf .github
-      
-      - name: Set up git user
+
+      - name: Set Up Git User
         run: |
           git config --local user.email "noreply@zayedkherani.com"
           git config --local user.name "GitHub Action"
 
-      - name: Import GPG key
+      - name: Import GPG Signing Key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v6
         with:
@@ -134,13 +134,13 @@ jobs:
           git_commit_gpgsign: true
           trust_level: 5
 
-      - name: Push to production branch
+      - name: Push to Production Branch
         run: |
           git checkout -B production
           git add .
           COMMIT_MSG="production: $(git log -1 --pretty=%B)"
           git commit --signoff -m "$COMMIT_MSG"
           git push -f origin production
-      
-      - name: Check for unverified commits
+
+      - name: Check for Unverified Commits
         uses: nadock/verified_commits_check@v1
