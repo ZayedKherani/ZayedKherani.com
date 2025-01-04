@@ -3,17 +3,27 @@
 # to the root directory of the repository for https://zayedkherani.com/resume
 
 # Importing Required Modules
+
+"""
 from webdriver_manager.core.os_manager import ChromeType, PATTERN
 from webdriver_manager.core.utils import read_version_from_cmd
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+"""
 from os.path import exists, join
+"""
 from selenium import webdriver
+"""
 from os import getcwd, remove
+"""
 from base64 import b64decode
+"""
+from requests import get
+"""
 from json import dumps
 from time import sleep
+"""
 
 # Removing the existing resume.pdf file if it exists
 remove(
@@ -29,6 +39,8 @@ remove(
 ) else None
 
 
+# Temporarily stop Print to PDF and replace with direct save
+"""
 # Starting the Chrome WebDriver Options Agent
 chrome_options = Options()
 
@@ -127,13 +139,19 @@ pdf_data = driver.execute_cdp_cmd(
         "isLandscapeEnabled": True
     }
 )
+"""
 
+# Getting the PDF Data
 # Writing the PDF Data to a PDF File
 with open('resume.pdf', 'wb') as file:
-    file.write(b64decode(pdf_data['data']))
+    # file.write(b64decode(pdf_data['data']))
+    file.write(get("https://zayedkherani.com/resume.pdf").content)
 
+# Temporarily stop Print to PDF and replace with direct save
+"""
 # Closing the Chrome WebDriver
 driver.quit()
+"""
 
 # Closing the PDF File if it is Open
 try:

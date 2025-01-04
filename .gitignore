@@ -5,5 +5,8 @@ dkim_record.txt
 private_key.pem
 private_key.txt
 
+# temporarily leave resume in code base
+# until another solution replaces creddle
+
 # resume used in reference
 resume.pdf

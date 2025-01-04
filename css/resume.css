@@ -2,10 +2,26 @@
   div.resumeIFrame {
     top: 54px;
   }
+
+  object.resumeContentObject {
+    display: none;
+  }
+  
+  iframe.resumeContentIFrame {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 600px) {
   div.resumeIFrame {
     top: 108px;
+  }
+
+  object.resumeContentObject {
+    display: block;
+  }
+  
+  iframe.resumeContentIFrame {
+    display: none;
   }
 }
