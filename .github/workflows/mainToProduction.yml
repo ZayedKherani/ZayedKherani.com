@@ -49,7 +49,7 @@ jobs:
       #   run: sudo apt purge chromium-browser
 
       - name: Install a Specified Chromium
-        run: sudo apt install -y chromium-browser=1:85.0.4183.83-0ubuntu2.22.04.1
+        run: sudo apt install -y chromium-browser
 
       - name: Remove Unneeded Packages
         run: sudo apt autoremove
