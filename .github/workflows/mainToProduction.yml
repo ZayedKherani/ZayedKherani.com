@@ -26,7 +26,7 @@ jobs:
     if: github.ref == 'refs/heads/main' || ${{ inputs.workflow_dispatch_trigger }}
     steps:
       - name: Checkout Main Branch
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: main
           token: ${{ secrets.GH_TOKEN }}
@@ -111,7 +111,7 @@ jobs:
         uses: nadock/verified_commits_check@v1
 
       - name: Checkout Production Branch
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: production
           token: ${{ secrets.GH_TOKEN }}
