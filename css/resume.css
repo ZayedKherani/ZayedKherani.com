@@ -1,20 +1,25 @@
-@media screen and (min-width: 601px) {
-  div.resumeIFrame {
-    top: 54px;
-  }
+div.resumeIFrame {
+  top: 52px;
+}
 
+@media screen and (min-width: 601px) {
   object.resumeContentObject {
     display: none;
   }
   
   iframe.resumeContentIFrame {
     display: block;
+  }
+
+  nav.nav-bar ul div#nav-bar-button.right li.resume-download-button {
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 600px) {
-  div.resumeIFrame {
-    top: 108px;
+  body {
+    background: #1E1E1E !important;
+    background-color: #1E1E1E !important;
   }
 
   object.resumeContentObject {
@@ -23,5 +28,9 @@
   
   iframe.resumeContentIFrame {
     display: none;
+  }
+
+  nav.nav-bar ul div#nav-bar-button.right li.resume-download-button {
+    display: inline !important;
   }
 }

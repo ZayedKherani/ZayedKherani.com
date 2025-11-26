@@ -1,3 +1,8 @@
+@keyframes click-here-animation {
+  from { background-color: #000000; }
+  to { background-color: #111111; }
+}
+
 nav.nav-bar {
   background-color: #000000;
   list-style-type: none;
@@ -9,48 +14,167 @@ nav.nav-bar ul {
   padding: 0;
 }
 
-nav.nav-bar ul li {
-  margin: 0;
-  padding: 0;
-  display: inline;
+nav.nav-bar ul div.left {
   float: left;
-  width: 50px;
 }
 
-p.main-name {
+nav.nav-bar ul div.right {
+  float: right;
+}
+
+nav.nav-bar ul div.left p.main-name,
+nav.nav-bar ul div.left p.main-title {
   margin: 14px 16px;
   display: inline;
   color: #ffffff;
   float: left;
 }
 
-img.icon {
-  color: #ffffff;
-  height: 20px;
-  width: auto;
+nav.nav-bar ul div li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  float: left;
 }
 
-img.fab {
-  max-height: 20px;
-  width: auto;
+nav.nav-bar ul div li:not(.active) {
+  background-color: #000000;
+  transition: background-color 0.25s ease;
 }
 
-nav.nav-bar ul li a {
+nav.nav-bar ul div li.active {
+  background-color: #111111;
+  transition: background-color 0.5s ease;
+}
+
+nav.nav-bar ul div li.click-here {
+  background-color: #111111;
+  transition: background-color 0.5s ease;
+  animation: click-here-animation 1s infinite alternate;
+}
+
+nav.nav-bar ul div li a {
   text-decoration: none;
   padding: 14px 16px;
   text-align: center;
   display: block;
   color: #ffffff;
+  fill: #ffffff;
+  transition: background-color 0.25s ease;
 }
 
-nav.nav-bar ul li a:hover:not(.active) {
-  background-color: #111111;
+nav.nav-bar ul div li a:link,
+nav.nav-bar ul div li a:visited {
+  text-decoration: none;
 }
 
-div.left {
-  float: left;
+nav.nav-bar ul div li a svg.icon {
+  color: #ffffff;
+  height: 20px;
+  width: auto;
+  display: inline;
+  vertical-align: top;
 }
 
-div.right {
-  float: right;
+nav.nav-bar ul div#nav-bar.right li a p.nav-name {
+  margin: 0;
+  padding: 0 5px;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+@media screen and (min-width: 1076px) {
+  nav.nav-bar ul div#nav-bar.right li a p.nav-name {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 665px) and (max-width: 1075px) {
+  nav.nav-bar ul div#nav-bar.right li a p.nav-name {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 665px) {
+  nav.nav-bar ul div.left p.main-name {
+    display: inline;
+  }
+  
+  nav.nav-bar ul div#nav-bar-button.right li.responsive-navbar-menu {
+    display: none !important;
+  }
+
+  nav.nav-bar ul div li:hover:not(.active),
+  nav.nav-bar ul div li:focus:not(.active),
+  nav.nav-bar ul div li:active:not(.active) {
+    background-color: #111111;
+    transition: background-color 0.5s ease;
+  }
+}
+
+@media screen and (max-width: 664px) {
+  nav.nav-bar ul div.left p.main-name {
+    display: none;
+  }
+
+  nav.nav-bar ul div#nav-bar-button.right li.responsive-navbar-menu {
+    display: inline !important;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive {
+    position: absolute;
+    top: 52px;
+    background: #000000;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    width: 100vw;
+  }
+  
+  nav.nav-bar ul div#nav-bar.right li {
+    display: none;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive {
+    right: 0;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive li {
+    display: block;
+    border: 1px solid #ffffff;
+    margin-bottom: 17px;
+    transition: background-color 0.25s ease, border 0.25s ease;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive li a p {
+    color: #ffffff;
+    transition: color 0.25s ease;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive li a svg path {
+    fill: #ffffff;
+    transition: fill 0.25s ease;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive li:hover,
+  nav.nav-bar ul div#nav-bar.right.responsive li:focus,
+  nav.nav-bar ul div#nav-bar.right.responsive li:active {
+    background-color: #ffffff;
+    border: 1px solid #787878;
+    transition: background-color 0.5s ease, border 0.5s ease;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive li:hover a p,
+  nav.nav-bar ul div#nav-bar.right.responsive li:focus a p,
+  nav.nav-bar ul div#nav-bar.right.responsive li:active a p {
+    color: #000000;
+    transition: color 0.5s ease;
+  }
+
+  nav.nav-bar ul div#nav-bar.right.responsive li:hover a svg path,
+  nav.nav-bar ul div#nav-bar.right.responsive li:focus a svg path,
+  nav.nav-bar ul div#nav-bar.right.responsive li:active a svg path {
+    fill: #000000;
+    transition: fill 0.5s ease;
+  }
 }
