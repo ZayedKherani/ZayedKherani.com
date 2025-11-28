@@ -28,11 +28,11 @@ FILES_TO_FETCH: Sequence[AssetSpec] = (
         "/",
         "https://shs.zayedkherani.com/resume.pdf"
     ),
-    AssetSpec(
-        "cider-linux-x64.deb",
-        "/objects/cider-linux/",
-        "https://shs.zayedkherani.com/cider-linux-x64.deb",
-    ),
+    # AssetSpec(
+    #     "cider-linux-x64.deb",
+    #     "/objects/cider-linux/",
+    #     "https://shs.zayedkherani.com/cider-linux-x64.deb",
+    # ),
 )
 
 
