@@ -2,7 +2,7 @@ div.resumeIFrame {
   top: 52px;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 600px) {
   object.resumeContentObject {
     display: none;
   }
@@ -11,7 +11,7 @@ div.resumeIFrame {
     display: block;
   }
 
-  nav.nav-bar ul div#nav-bar-button.right li.resume-download-button {
+  nav.nav-bar ul.main-nav-bar li.resume-download-button {
     display: none !important;
   }
 }
@@ -30,7 +30,7 @@ div.resumeIFrame {
     display: none;
   }
 
-  nav.nav-bar ul div#nav-bar-button.right li.resume-download-button {
+  nav.nav-bar ul.main-nav-bar li.resume-download-button {
     display: inline !important;
   }
 }

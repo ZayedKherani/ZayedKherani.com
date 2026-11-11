@@ -3,6 +3,12 @@
   to { background-color: #111111; }
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 nav.nav-bar {
   background-color: #000000;
   list-style-type: none;
@@ -12,48 +18,56 @@ nav.nav-bar {
 nav.nav-bar ul {
   margin: 0;
   padding: 0;
+  list-style-type: none;
+  list-style: none;
 }
 
-nav.nav-bar ul div.left {
+nav.nav-bar ul li.left {
   float: left;
 }
 
-nav.nav-bar ul div.right {
+nav.nav-bar ul li.right {
   float: right;
 }
 
-nav.nav-bar ul div.left p.main-name,
-nav.nav-bar ul div.left p.main-title {
+nav.nav-bar ul li.left div.navbar-content p.main-title,
+nav.nav-bar ul li.left div.navbar-content p.main-name {
   margin: 14px 16px;
   display: inline;
   color: #ffffff;
   float: left;
 }
 
-nav.nav-bar ul div li {
+nav.nav-bar ul li div.navbar-content {
   margin: 0;
   padding: 0;
-  display: inline;
+  display: flex;
   float: left;
 }
 
-nav.nav-bar ul div li:not(.active) {
+nav.nav-bar ul li:not(.active) div.navbar-content {
   background-color: #000000;
   transition: background-color 0.25s ease;
 }
 
-nav.nav-bar ul div li.active {
+nav.nav-bar ul li.active div.navbar-content {
   background-color: #111111;
   transition: background-color 0.5s ease;
 }
 
-nav.nav-bar ul div li.click-here {
+nav.nav-bar ul li.click-here div.navbar-content a {
   background-color: #111111;
   transition: background-color 0.5s ease;
   animation: click-here-animation 1s infinite alternate;
 }
 
-nav.nav-bar ul div li a {
+nav.nav-bar ul li.right ul.nav-bar-items {
+  display: flex;
+  list-style-type: none;
+  list-style: none;
+}
+
+nav.nav-bar ul li div.navbar-content a {
   text-decoration: none;
   padding: 14px 16px;
   text-align: center;
@@ -63,12 +77,12 @@ nav.nav-bar ul div li a {
   transition: background-color 0.25s ease;
 }
 
-nav.nav-bar ul div li a:link,
-nav.nav-bar ul div li a:visited {
+nav.nav-bar ul li div.navbar-content a:link,
+nav.nav-bar ul li div.navbar-content a:visited {
   text-decoration: none;
 }
 
-nav.nav-bar ul div li a svg.icon {
+nav.nav-bar ul li div.navbar-content a svg.icon {
   color: #ffffff;
   height: 20px;
   width: auto;
@@ -76,52 +90,59 @@ nav.nav-bar ul div li a svg.icon {
   vertical-align: top;
 }
 
-nav.nav-bar ul div#nav-bar.right li a p.nav-name {
+nav.nav-bar ul li#nav-bar.right div.navbar-content a p.nav-name {
   margin: 0;
   padding: 0 5px;
   color: #ffffff;
   vertical-align: top;
 }
 
-@media screen and (min-width: 1076px) {
-  nav.nav-bar ul div#nav-bar.right li a p.nav-name {
+@media screen and (min-width: 1075px) {
+  nav.nav-bar ul li#nav-bar.right div.navbar-content a p.nav-name {
     display: inline;
   }
 }
 
 @media screen and (min-width: 665px) and (max-width: 1075px) {
-  nav.nav-bar ul div#nav-bar.right li a p.nav-name {
+  nav.nav-bar ul li#nav-bar.right div.navbar-content a p.nav-name {
     display: none;
   }
 }
 
 @media screen and (min-width: 665px) {
-  nav.nav-bar ul div.left p.main-name {
+  nav.nav-bar ul li.left div.navbar-content p.main-name {
     display: inline;
   }
   
-  nav.nav-bar ul div#nav-bar-button.right li.responsive-navbar-menu {
+  nav.nav-bar ul li.right.responsive-navbar-menu {
+    display: none !important;
+  }
+  
+  nav.nav-bar ul li.right.responsive-navbar-menu div.nav-bar-button div.navbar-content {
     display: none !important;
   }
 
-  nav.nav-bar ul div li:hover:not(.active),
-  nav.nav-bar ul div li:focus:not(.active),
-  nav.nav-bar ul div li:active:not(.active) {
+  nav.nav-bar ul li.left div.navbar-content a:hover:not(.active),
+  nav.nav-bar ul li.left div.navbar-content a:focus:not(.active),
+  nav.nav-bar ul li.left div.navbar-content a:active:not(.active),
+  nav.nav-bar ul li.right-items div.navbar-content a:hover:not(.active),
+  nav.nav-bar ul li.right-items div.navbar-content a:focus:not(.active),
+  nav.nav-bar ul li.right-items div.navbar-content a:active:not(.active) {
     background-color: #111111;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, border 0.5s ease;
   }
 }
 
-@media screen and (max-width: 664px) {
-  nav.nav-bar ul div.left p.main-name {
+@media screen and (max-width: 665px) {
+  nav.nav-bar ul li.left div.navbar-content p.main-name {
     display: none;
   }
 
-  nav.nav-bar ul div#nav-bar-button.right li.responsive-navbar-menu {
+  nav.nav-bar ul li.right.responsive-navbar-menu div.nav-bar-buttondiv.navbar-content {
     display: inline !important;
   }
 
-  nav.nav-bar ul div#nav-bar.right.responsive {
+  nav.nav-bar ul li#nav-bar.right.responsive {
     position: absolute;
     top: 52px;
     background: #000000;
@@ -129,51 +150,54 @@ nav.nav-bar ul div#nav-bar.right li a p.nav-name {
     align-items: center;
     display: grid;
     width: 100vw;
-  }
-  
-  nav.nav-bar ul div#nav-bar.right li {
-    display: none;
-  }
-
-  nav.nav-bar ul div#nav-bar.right.responsive {
     right: 0;
   }
 
-  nav.nav-bar ul div#nav-bar.right.responsive li {
+  nav.nav-bar ul li#nav-bar.right.responsive ul.nav-bar-items {
+    display: table;
+    width: 100%;
+  }
+
+  nav.nav-bar ul li#nav-bar.right div.navbar-content {
+    display: none;
+  }
+
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content {
     display: block;
     border: 1px solid #ffffff;
     margin-bottom: 17px;
     transition: background-color 0.25s ease, border 0.25s ease;
+    width:100%
   }
 
-  nav.nav-bar ul div#nav-bar.right.responsive li a p {
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content a p {
     color: #ffffff;
     transition: color 0.25s ease;
   }
 
-  nav.nav-bar ul div#nav-bar.right.responsive li a svg path {
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content a svg path {
     fill: #ffffff;
     transition: fill 0.25s ease;
   }
 
-  nav.nav-bar ul div#nav-bar.right.responsive li:hover,
-  nav.nav-bar ul div#nav-bar.right.responsive li:focus,
-  nav.nav-bar ul div#nav-bar.right.responsive li:active {
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:hover,
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:focus,
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:active{
     background-color: #ffffff;
     border: 1px solid #787878;
     transition: background-color 0.5s ease, border 0.5s ease;
   }
 
-  nav.nav-bar ul div#nav-bar.right.responsive li:hover a p,
-  nav.nav-bar ul div#nav-bar.right.responsive li:focus a p,
-  nav.nav-bar ul div#nav-bar.right.responsive li:active a p {
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:hover a p,
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:focus a p,
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:active a p {
     color: #000000;
     transition: color 0.5s ease;
   }
 
-  nav.nav-bar ul div#nav-bar.right.responsive li:hover a svg path,
-  nav.nav-bar ul div#nav-bar.right.responsive li:focus a svg path,
-  nav.nav-bar ul div#nav-bar.right.responsive li:active a svg path {
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:hover a svg path,
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:focus a svg path,
+  nav.nav-bar ul li#nav-bar.right.responsive div.navbar-content:active a svg path {
     fill: #000000;
     transition: fill 0.5s ease;
   }

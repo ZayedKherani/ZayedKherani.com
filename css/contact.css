@@ -1,5 +1,4 @@
 div.contactForm {
-  position: relative;
   top: 40px;
 }
 
@@ -13,6 +12,7 @@ main div.contactForm form.contactForm textarea.message {
   padding: 15px;
   color: #ffffff;
   transition: border 0.5s ease, color 0.5s ease, background-color 0.5s ease;
+  resize: none;
 }
 
 main div.contactForm form.contactForm input.name::-ms-input-placeholder,
@@ -64,7 +64,7 @@ main div.contactForm form.contactForm button.submit:focus {
   color: #ffffff;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 1149px) {
   main div.contactForm form.contactForm input.name,
   main div.contactForm form.contactForm input.email {
     width: calc(25% + 102px);
@@ -73,6 +73,15 @@ main div.contactForm form.contactForm button.submit:focus {
   main div.contactForm form.contactForm input.subject,
   main div.contactForm form.contactForm textarea.message {
     width: calc(50% + 250px);
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1149px) {
+  main div.contactForm form.contactForm input.name,
+  main div.contactForm form.contactForm input.email,
+  main div.contactForm form.contactForm input.subject,
+  main div.contactForm form.contactForm textarea.message {
+    width: calc(50% + 100px);
   }
 }
 

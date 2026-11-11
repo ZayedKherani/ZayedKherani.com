@@ -1,0 +1,16 @@
+google pagespeed
+    fix cloudflare/google css/js where possible
+
+fix contact page
+    ensure support@zayedkherani.com can be emailed directly
+    ensure contact form is functional with its mailchannel worker
+
+replace all "./" with absolute paths https://zayedkherani.com/
+    */*.js, */*.css, */*.html, *.html
+    https://zayedkherani.com/
+    ./
+
+before commit
+    remove old sitemap xml
+    remove resume pdf
+    remove this todo list

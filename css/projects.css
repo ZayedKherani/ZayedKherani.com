@@ -27,7 +27,7 @@ div.text {
   display: table;
 }
 
-img.project {
+div.project svg {
   max-width: 150px;
   float: left;
 }
@@ -36,6 +36,12 @@ img.project {
   display: table;
   clear: both;
   content: "";
+}
+
+div.clearfix {
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
 span.tittle {
