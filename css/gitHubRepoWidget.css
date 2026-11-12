@@ -62,7 +62,7 @@
 }
 
 .repo-card .Python {
-  background: #3581ba;
+  background: #FFd43b;
 }
 
 .repo-card .Ruby {
@@ -83,4 +83,8 @@
 
 .repo-card .Objective-C {
   background: #438eff;
+}
+
+.repo-card .Flutter {
+  background: #0553b1;
 }

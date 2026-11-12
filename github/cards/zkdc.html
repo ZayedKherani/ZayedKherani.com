@@ -140,39 +140,40 @@
       rel="stylesheet"
       href="/css/gitHubRepoWidget.css"
     />
-
-    <script src="/js/gitHubEmbediFrame.js"></script>
   </head>
 
-  <body>
+  <body class="Ready">
     <main>
-      <script id="repo-card" type="text/template">
-        <div class="header {language}">
-            <a class="avatar" href="https://github.com/{login}">
-                <img src="{avatar_url}&s=48" alt="{login}">
+      <div class="github-card repo-card" id="repo-card">
+        <div class="header HTML">
+            <a class="avatar" href="https://github.com/ZayedKherani">
+                <img src="https://avatars.githubusercontent.com/u/32423286?v=4&s=48" alt="ZayedKherani">
             </a>
             <h1>
-                <a href="https://github.com/{full_name}/">{name}</a>
+                <a href="https://github.com/ZayedKherani/ZayedKherani.com/">ZayedKherani.com</a>
             </h1>
         </div>
         <div class="content">
-            <p>{description}{homepage}</p>
+            <p>
+              The Code For This Website
+              <a href="https://zayedkherani.com">zayedkherani.com</a>
+            </p>
             <ul class="status">
                 <li>
-                    <a href="https://github.com/{full_name}/network/">
-                        <strong>{forks_count}</strong>
+                    <a href="https://github.com/ZayedKherani/ZayedKherani.com/network/">
+                        <strong>0</strong>
                         Forks
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/{full_name}/stargazers/">
-                        <strong>{watchers_count}</strong>
+                    <a href="https://github.com/ZayedKherani/ZayedKherani.com/stargazers/">
+                        <strong>2</strong>
                         Stars
                     </a>
                 </li>
             </ul>
         </div>
-      </script>
+      </div>
     </main>
   </body>
 </html>

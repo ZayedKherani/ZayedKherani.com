@@ -67,7 +67,8 @@ nav.nav-bar ul li.right ul.nav-bar-items {
   list-style: none;
 }
 
-nav.nav-bar ul li div.navbar-content a {
+nav.nav-bar ul li div.navbar-content a,
+nav.nav-bar ul li div.navbar-content button {
   text-decoration: none;
   padding: 14px 16px;
   text-align: center;
@@ -77,12 +78,29 @@ nav.nav-bar ul li div.navbar-content a {
   transition: background-color 0.25s ease;
 }
 
+nav.nav-bar ul li div.navbar-content button.nav-bar-responsive-menu-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 16px 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+nav.nav-bar ul li div.navbar-content button.nav-bar-responsive-menu-button:focus, 
+nav.nav-bar ul li div.navbar-content button.nav-bar-responsive-menu-button:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
 nav.nav-bar ul li div.navbar-content a:link,
 nav.nav-bar ul li div.navbar-content a:visited {
   text-decoration: none;
 }
 
-nav.nav-bar ul li div.navbar-content a svg.icon {
+nav.nav-bar ul li div.navbar-content a svg.icon,
+nav.nav-bar ul li div.navbar-content button svg.icon {
   color: #ffffff;
   height: 20px;
   width: auto;

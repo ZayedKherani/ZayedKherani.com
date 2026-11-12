@@ -1,7 +1,7 @@
 function toggleMenu() {
   const navbarDiv = document.querySelector("nav.nav-bar ul li#nav-bar.right");
   const menuIconPath = document.querySelector(
-    "li.responsive-navbar-menu a svg path"
+    "li.responsive-navbar-menu button svg path"
   );
 
   const navBarHeight = document.querySelector("nav.nav-bar").offsetHeight;
