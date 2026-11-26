@@ -241,48 +241,32 @@
                 "
                 class="resumeIFrame"
             >
-                <object
-                    data="/resume.pdf"
-                    type="application/pdf"
-                    width="100%"
-                    height="100%"
-                    style="
-                        width: 100%;
-                        height: 100%;
-                        border: none;
-                    "
-                    class="resumeContentObject"
-                    download="Zayed Kherani - Resume.pdf"
-                >
-                    <iframe
-                        src="https://docs.google.com/viewerng/viewer?url=https://zayedkherani.com/resume.pdf&embedded=true"
-                        frameborder="0"
-                        style="
-                            display: block;
-                            width: 100%;
-                            height: 100%;
-                            border: none;
-                        "
-                        title="Zayed Kherani's Resume"
-                        download="Zayed Kherani - Resume.pdf"
-                        aria-label="Zayed Kherani's Resume"
-                        ></iframe>
-                </object>
-            
-                <iframe
-                    src="/resume.pdf"
-                    frameborder="0"
-                    allowtransparency="true"
-                    style="
-                        width: 100%;
-                        height: 100%;
-                        border: none;
-                    "
-                    title="Zayed Kherani's Resume"
-                    class="resumeContentIFrame"
-                    download="Zayed Kherani - Resume.pdf"
-                    aria-label="Zayed Kherani's Resume"
-                ></iframe>
+                <div id="pdf"></div>
+                <script type="module">
+                if (!navigator.pdfViewerEnabled) {
+                    const CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/6.5.438';
+                    const pdfjs = await import(`${CDN}/pdf.min.mjs`);
+                    pdfjs.GlobalWorkerOptions.workerSrc = `${CDN}/pdf.worker.min.mjs`;
+
+                    const pdf = await pdfjs.getDocument('/Zayed Kherani - Resume.pdf').promise;
+                    const container = document.getElementById('pdf');
+                    const scale = Math.min(window.devicePixelRatio, 2);
+
+                    for (let n = 1; n <= pdf.numPages; n++) {   // swap for lazy rendering
+                    const page = await pdf.getPage(n);
+                    const vp = page.getViewport({ scale });
+                    const canvas = document.createElement('canvas');
+                    canvas.width = vp.width;
+                    canvas.height = vp.height;
+                    canvas.style.cssText = 'width:100%;height:auto';
+                    container.appendChild(canvas);
+                    await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+                    }
+                } else {
+                    document.getElementById('pdf').innerHTML =
+                    '<iframe src="/Zayed Kherani - Resume.pdf" style="width:100%;height:100vh;border:0"></iframe>';
+                }
+                </script>
             </div>
         </main>
     </body>

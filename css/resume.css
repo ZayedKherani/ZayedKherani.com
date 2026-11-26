@@ -3,14 +3,6 @@ div.resumeIFrame {
 }
 
 @media screen and (min-width: 600px) {
-  object.resumeContentObject {
-    display: none;
-  }
-  
-  iframe.resumeContentIFrame {
-    display: block;
-  }
-
   nav.nav-bar ul.main-nav-bar li.resume-download-button {
     display: none !important;
   }
@@ -20,14 +12,6 @@ div.resumeIFrame {
   body {
     background: #1E1E1E !important;
     background-color: #1E1E1E !important;
-  }
-
-  object.resumeContentObject {
-    display: block;
-  }
-  
-  iframe.resumeContentIFrame {
-    display: none;
   }
 
   nav.nav-bar ul.main-nav-bar li.resume-download-button {
