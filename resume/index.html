@@ -246,21 +246,24 @@
                 if (!navigator.pdfViewerEnabled) {
                     const CDN = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/6.5.438';
                     const pdfjs = await import(`${CDN}/pdf.min.mjs`);
+
                     pdfjs.GlobalWorkerOptions.workerSrc = `${CDN}/pdf.worker.min.mjs`;
 
-                    const pdf = await pdfjs.getDocument('/Zayed Kherani - Resume.pdf').promise;
+                    const pdf = await pdfjs.getDocument({url: '/Zayed Kherani - Resume.pdf'}).promise;
                     const container = document.getElementById('pdf');
                     const scale = Math.min(window.devicePixelRatio, 2);
 
                     for (let n = 1; n <= pdf.numPages; n++) {   // swap for lazy rendering
-                    const page = await pdf.getPage(n);
-                    const vp = page.getViewport({ scale });
-                    const canvas = document.createElement('canvas');
-                    canvas.width = vp.width;
-                    canvas.height = vp.height;
-                    canvas.style.cssText = 'width:100%;height:auto';
-                    container.appendChild(canvas);
-                    await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+                        const page = await pdf.getPage(n);
+                        const vp = page.getViewport({ scale });
+                        const canvas = document.createElement('canvas');
+                        
+                        canvas.width = vp.width;
+                        canvas.height = vp.height;
+                        canvas.style.cssText = 'width:100%;height:auto';
+                        container.appendChild(canvas);
+                        
+                        await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
                     }
                 } else {
                     document.getElementById('pdf').innerHTML =
