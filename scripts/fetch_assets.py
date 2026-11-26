@@ -24,7 +24,7 @@ class AssetSpec:
 
 FILES_TO_FETCH: Sequence[AssetSpec] = (
     AssetSpec(
-        "resume.pdf",
+        "Zayed Kherani - Resume.pdf",
         "/",
         "https://shs.zayedkherani.com/resume.pdf"
     ),
