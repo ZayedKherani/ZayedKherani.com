@@ -88,3 +88,23 @@
 .repo-card .Flutter {
   background: #0553b1;
 }
+
+@media screen and (min-width: 601px) {
+  h1.main-repo-title {
+    display: inline;
+  }
+
+  h1.short-repo-title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1.main-repo-title {
+    display: none;
+  }
+
+  h1.short-repo-title {
+    display: inline;
+  }
+}

@@ -6,6 +6,6 @@
 
 @media screen and (max-width: 600px) {
   iframe.githubIFrame {
-    width: 200px;
+    width: 100%;
   }
 }
